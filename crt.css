@@ -1,0 +1,360 @@
+/* Page defaults and setup */
+:root {/* CRT colors stored at root */
+
+  --crt-red: rgb(218, 49, 49);
+  --crt-green: rgb(112, 159, 115);
+  --crt-blue: rgb(40, 129, 206);
+}
+html {/* default font styling */
+  font-size: 1.5rem;
+  font-family: "PixelOperator8", monospace;
+  min-height: 100%;
+}
+main { /* crt block setup */
+  height: 100dvh;
+  color: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+}
+
+.tutorial-Overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  opacity: 0;
+  z-index: 5;
+
+  background-color: rgba(0,0,0,0.75);
+}
+.tutorial-Text{
+  opacity: 0;
+  line-height: 1;
+  position: absolute;
+  top: 10dvh;
+  left: 10dvw;
+  margin: 0;
+  font-size: clamp(0.25rem, 2dvw, 1.5rem)
+  /* font-size: clamp(1rem, 1dvw+1rem, 4rem); */
+}
+.tutorialOnly{
+  opacity: 0;
+}
+.type_in {
+  opacity: 1;
+  color: attr(data-color);
+
+  animation: typeIn steps(40) 2s 1 normal both;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.fade-Out{
+  animation: fadeOut 2s normal both;
+}
+.fade-In{
+  animation: fadeIn 2s normal both;
+}
+.cursor {
+  display: inline-block;
+  vertical-align: middle;
+  animation: blinkTextCursor 750ms infinite normal;
+}
+.tutorialHighlight{
+  z-index: 10;
+}
+.tuningNote{
+  margin: 5dvw;
+  opacity: 0;
+  position: absolute;
+  top: 10dvh;
+  left: 40dvw;
+  z-index: 10;
+}
+.tutorialButton{
+  height: 15dvh;
+  width: 15dvh;
+  position: absolute;
+  top: 82dvh;
+  left: 2dvw;
+  background-color: transparent;
+  border-color: transparent;
+}
+.front{
+  z-index: 99;
+}
+
+
+/* positioning */
+.soundTools { /* properly displays sound tools (pitch and note) in the top right*/
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: clamp(0.25rem, 1dvw, 1rem);
+  text-align: right;
+  z-index: 1;
+  width: 99dvw;
+}
+
+.staffBounds {
+  width: 95dvw;
+  height: 22dvh;
+  padding-top: 4dvh;
+  padding-left: 2.5dvw;
+  padding-right: 2.5dvw;
+}
+
+.staffImg {
+  position: relative;
+  width: 95dvw;
+}
+
+.note{
+  position: absolute;
+  width: 7.5dvw;
+  z-index: 2;
+}
+.song{
+  height:15dvh;
+  /* color:rgb(0,5,51); */
+  color:rgb(150,150,150);
+}
+.side{
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 58dvh;
+  left: -3dvw;
+}
+.bottom{
+  position: absolute;
+  top: 85dvh;
+  left: 2dvw;
+}
+
+
+
+.bagSong{
+  height:8dvh;
+  color:rgb(0,5,51);
+}
+.bag {
+  position: absolute;
+  height: 100dvh;
+  z-index: 3;
+  top: 0dvh;
+  left: -5dvh;
+  visibility: hidden;
+}
+.bagIn{
+  visibility: visible;
+  animation: slideFromLeft 2s cubic-bezier(0.42, 0.47, 0, 1.21) forwards;
+}
+.bagOut{
+  visibility: visible;
+  animation: slideToLeft 2s cubic-bezier(0.88,-0.41, 0.63, 0.69) forwards;
+}
+
+.tray {
+  position: absolute;
+  width: 100dvw;
+  z-index: 3;
+  top: 40dvh;
+  left: 0dvh;
+  visibility: hidden;
+}
+.slideIn{
+  visibility: visible;
+  animation: slideFromBottom 2s cubic-bezier(0.42, 0.47, 0, 1.21) forwards;
+}
+.slideOut{
+  visibility: visible;
+  animation: slideToBottom 2s cubic-bezier(0.88,-0.41, 0.63, 0.69) forwards;
+}
+
+.tray-overlay {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+}
+
+.bagSeed{
+  height: 8dvh;
+  transform: translateY(0), rotate(0);
+}
+.seed{
+  width: 10dvw;
+  transform: translateY(0), rotate(0);
+}
+.seedFall{
+  animation: seedFallAnim 2s cubic-bezier(0.64, -1.3, 1, 0.11) forwards;
+}
+
+.pot{
+  width: 5dvw;
+  padding: 0dvh 3dvw;
+}
+.selection{
+  position: absolute;
+  width: 7dvw;
+  visibility: hidden;
+}
+
+.flex-container {
+  display: flex;
+  gap: 0dvh;
+}
+
+.column-1 {
+  flex: 1;
+  padding: 2dvh;
+}
+
+.column-2 {
+  flex: 2;
+  padding: 2dvh;
+}
+
+.crt_glow {
+  filter:
+    drop-shadow(0 0 0.5dvh currentColor) drop-shadow(0.25dvh 0.25dvh rgba(255, 0, 255, 0.5)) drop-shadow(-0.25dvh -0.25dvh rgba(0, 255, 255, 0.5));
+}
+
+.wrapper {
+  padding-top: 2rem;
+  padding-left: 1rem;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
+@font-face {
+  font-family: 'PixelOperator8';
+  src: url("font/PixelOperator8.ttf");
+}
+
+@keyframes seedFallAnim{
+  from {
+    transform: translateY(0) rotate(0);
+  }
+
+  to {
+    transform: translateY(300%) rotate(180deg);
+  }
+}
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideToBottom {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideToLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typeIn {
+  from {
+    max-width: 0;
+  }
+
+  to {
+    max-width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+
+
+/* Animation */
+.crt {
+  background-color: rgb(25, 25, 30);
+  /* text-shadow: 0 0 0.2em currentColor, 1px 1px rgba(255, 0, 255, 0.5), -1px -1px rgba(0, 255, 255, 0.4); */
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    transform: translateZ(0);
+    pointer-events: none;
+    /* opacity: 0.5; */
+    mix-blend-mode: overlay;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+  &:before {
+    background: repeating-linear-gradient(var(--crt-red) 0px,
+        var(--crt-green) 2px,
+        var(--crt-blue) 4px);
+  }
+
+  &:after {
+    background: repeating-linear-gradient(90deg,
+        var(--crt-red) 1px,
+        var(--crt-green) 2px,
+        var(--crt-blue) 3px);
+  }
+}

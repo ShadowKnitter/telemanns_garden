@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Telemann's Garden</title>
+    <!-- Stylesheets -->
+    <link href="./crt.css" rel="stylesheet">
+</head>
+
+<body style="margin: 0">
+    <main class="crt">
+
+        <!-- Staff -->
+        <h1 class="crt_glow soundTools"><span id="hertz"></span> hz</h1>
+        <h1 class="crt_glow soundTools" style="top:3dvh;"><span id="note"></span></h1>
+        <h1 class="crt_glow soundTools" style="top:3dvh; visibility: hidden;"><span id="notesPlayed"></span></h1>
+
+        <div class="staffBounds">
+            <img class="crt_glow staffImg" src="img/Treble Staff.png" alt="Staff failed to load"
+                style="color:rgb(255,255,255);"></img>
+            <div id = "templateStaff"></div>
+            <div id = "staff"></div>
+        </div>
+
+        <!-- Garden and Barn -->
+        <div class="flex-container">
+            <!-- Garden -->
+            <div class="column-2">
+                <div class="flex-container" style="flex-direction: column; margin-left: 13dvw;">
+                    <img id="selectionBox" class="crt_glow selection" src="img/Selection Box.png" alt="Selection Box failed to load" style="color:rgb(86,0,0);"></img>
+                    <img id="pointer" class="crt_glow selection" src="img/Pointer.png" alt="Pointer failed to load" style="color:rgb(86,0,0);"></img>
+
+                    <div id="potRow0" class="column-1" style="padding: 0px;">
+                        <img id="pot00" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot01" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot02" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot03" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+
+                    </div>
+                    <div id="potRow1" class="column-1" style="padding: 0px;">
+                        <img id="pot10" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot11" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot12" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot13" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+
+                    </div>
+                    <div id="potRow2" class="column-1" style="padding: 0px;">
+                        <img id="pot20" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot21" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot22" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                        <img id="pot23" class="crt_glow pot" src="img/Pot.png" alt="Pot failed to load" style="color:rgb(39,44,50);"></img>
+                    </div>
+                </div>
+            </div>
+            <!-- Barn -->
+            <div id="barnColumn" class="column-1">
+                <img id="barn" class="crt_glow" src="img/Barn Opening.gif" alt="Barn failed to load"
+                    style="color:rgb(255,255,255); width:30dvw; display: block; margin: auto;"></img>
+                    <img class="crt_glow song" src="img/Enter Barn Song.png" alt="Barn Song failed to load" style="display: block; margin: auto;"></img>
+            </div>
+        </div>
+
+        <!-- Barn Tray -->
+         <div id = "barnTray" class="tray">
+            <img class="crt_glow" src="img/Barn Tray.png" alt="Tray failed to load" style="width: 100dvw; color:rgb(59,0,0);"></img>
+            <div class="tray-overlay">
+                <div class="flex-container" style="width: 70dvw;">
+                    <div class="column-2">
+                        <img id="seed0" class="crt_glow seed seedFall" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img id="seed0Song" class = "crt_glow song" src="img/First Seed Song.png" alt="First Seed Song failed to load"></img>
+                    </div>
+                    <div class="column-2">
+                        <img id="seed1" class="crt_glow seed seedFall" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img id="seed1Song" class = "crt_glow song" src="img/Second Seed Song.png" alt="Second Seed Song failed to load"></img>
+                    </div>
+                    <div class="column-2">
+                        <img id="seed2" class="crt_glow seed seedFall" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img id="seed2Song" class = "crt_glow song" src="img/Third Seed Song.png" alt="Third Seed Song failed to load"></img>
+                    </div>
+                    <div class="column-1">
+                        <img class = "crt_glow song" src="img/Exit Barn Song.png" alt="Exit Barn Song failed to load"></img>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <!-- Bag -->
+        <div id = "bag" class="bag">
+            <img class="crt_glow" src="img/Bag.png" alt="Bag failed to load" style="height: 100dvh; color:rgb(16, 75, 62);"></img>
+            <div class="tray-overlay" style="top: 1%">
+                <div class="flex-container" style="flex-direction: column;">
+                    <div id="bagSlot0" class="column-1">
+                        <img id="bagSeed0" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/C Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot1" class="column-1">
+                        <img id="bagSeed1" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/D Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot2" class="column-1">
+                        <img id="bagSeed2" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/E Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot3" class="column-1">
+                        <img id="bagSeed3" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/F Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot4" class="column-1">
+                        <img id="bagSeed4" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/G Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot5" class="column-1">
+                        <img id="bagSeed5" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/A Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot6" class="column-1">
+                        <img id="bagSeed6" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/B Song.png" alt="C failed to load"></img>
+                    </div>
+                    <div id="bagSlot7" class="column-1">
+                        <img id="bagSeed7" class="crt_glow bagSeed" alt="Seed failed to load" style="color:rgb(90, 57, 32);"></img>
+                        <img class="crt_glow bagSong" src="img/Octave C Song.png" alt="C failed to load"></img>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <!-- Tutorial -->
+         <button id = "tutorialButton" type="button" class="tutorialButton front">
+            <img class="crt_glow" src="img/Light Bulb.png" alt="Tutorial Image failed to load" style="height: 13dvh;"></img>
+        </button>
+    
+        <div id="tutorialOverlay" class="tutorial-Overlay">
+            <h1 id = "tutorial1" class="crt_glow tutorial-Text">Welcome to Telemann's Garden</h1>
+            <h1 id = "tutorial2" class="crt_glow tutorial-Text">Georg Philipp Telemann was a renowned composer and </h1>
+            <h1 id = "tutorial2-2" class="crt_glow tutorial-Text" style = "margin: 5dvh;">collecter of exotic plants</h1>
+            <h1 id = "tutorial3" class="crt_glow tutorial-Text">He has left his garden to you</h1>
+            <h1 id = "tutorial4" class="crt_glow tutorial-Text" >Using whatever instrument you desire, </h1>
+            <h1 id = "tutorial4-2" class="crt_glow tutorial-Text" style = "margin: 5dvh;">guide plants in their growth</h1>
+            <h1 id = "tutorial5" class="crt_glow tutorial-Text">Open the Seed shop with a scale</h1>
+            <h1 id = "tutorial6" class="crt_glow tutorial-Text">Select a column with the below tune, called an arpeggio</h1>
+            <img id="columnSong" class="crt_glow song bottom tutorialHighlight tutorialOnly" src="img/Field Column Song.png" alt="Column Song failed to load" style="margin-left: 12dvw;"></img>
+            <h1 id = "tutorial7" class="crt_glow tutorial-Text">Then select a row with a lower arpeggio</h1>
+            <img id="rowSong" class="crt_glow song side tutorialHighlight tutorialOnly" src="img/Field Row Song.png" alt="Row Song failed to load"></img>
+            <h1 id = "tutorial8" class="crt_glow tutorial-Text">Selecting an empty pot allows you to plant a seed</h1>
+            <h1 id = "tutorial9" class="crt_glow tutorial-Text">An occupied pot will present phrases of a song</h1>
+            <h1 id = "tutorial9-2" class="crt_glow tutorial-Text" style = "margin: 5dvh;">Playing it will help the flower grow</h1>
+            <h1 id = "tutorial10" class="crt_glow tutorial-Text">Before you begin, please play this note:</h1>
+            <img id = "tuningNote" class="crt_glow song tuningNote" src="img/C Song.png" alt="C failed to load"></img>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <script src="plants.js"></script>
+    <script src="tutorial.js"></script>
+    <script type="module" src="noteDetection.js"></script>
+    
+</body>
+</html>
